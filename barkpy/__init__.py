@@ -1,0 +1,1 @@
+from .core import puppy_eyes_translator
