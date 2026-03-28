@@ -1,3 +1,5 @@
+import random
+
 #Turn a normal request into a puppy-eyes request
 def puppy_eyes_translator(request_text: str, sadness_multiplier: int) -> str:
     if not isinstance(request_text, str) or request_text.strip() == "":
@@ -168,3 +170,27 @@ def good_boy_generator(name: str, roughness: int):
             "Have a treat! 🦴"
     )
 
+#Helps you make a difficult technical decision by "sniffing out" the best option.
+def paw_selector(options: list, favorite_toy: str) -> str:
+    """
+    Helps you make a difficult technical decision by "sniffing out" the best option.
+    Args:
+        options (list): A list of option strings to choose from.
+        favorite_toy (str): The developer's favorite toy used in the justification.
+
+    Returns:
+        str: A dog-themed decision with a scent-based reason.
+
+    Raises:
+        ValueError: If options is empty.
+        TypeError: If options is not a list or favorite_toy is not a string.
+    """
+    if not isinstance(options, list):
+        raise TypeError("options must be a list.")
+    if not isinstance(favorite_toy, str):
+        raise TypeError("favorite_toy must be a string.")
+    if len(options) == 0:
+        raise ValueError("options list cannot be empty.")
+
+    chosen = random.choice(options)
+    return f"The paws have spoken! We pick '{chosen}' because it smells like your {favorite_toy}! *tail wag* 🐾"
