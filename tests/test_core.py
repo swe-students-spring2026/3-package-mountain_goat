@@ -121,8 +121,8 @@ class Tests:
     
     def test_good_boy_generator_roughness_effect(self):
         roughness = 7
-        actual = good_boy_generator("Riley", roughness)
-        assert actual.count("*scritch*") == roughness, (
+        actual = good_boy_generator("TestName", roughness)
+        assert actual.count("Who\'s a good developer?!") == roughness, (
             f'Expected good_boy_generator() to return {roughness} "Who\'s a good developer?!" repetitions. '
             f'Instead, it returned {actual.count("Who\'s a good developer?!")}'
         )
