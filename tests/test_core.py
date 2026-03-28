@@ -1,6 +1,5 @@
 import pytest
-from barkpy import puppy_eyes_translator, good_boy_generator
-
+from barkpy import puppy_eyes_translator, good_boy_generator,mailman_alert
 
 class Tests:
     def test_puppy_eyes_translator_returns_string(self):
@@ -132,5 +131,31 @@ class Tests:
             f"Instead, it returned {actual.count('*scritch*')}"
         )
 
+def test_mailman_alert_returns_string():
+    result = mailman_alert("Critical Bug in Production", 5)
+    assert isinstance(result, str)
+    assert "Bug" in result
+    assert "BARK" in result or "WOOF" in result
 
+def test_mailman_alert_replaces_stress_words():
+    result = mailman_alert("Critical ASAP Deadline", 4)
+    assert "Critical" not in result
+    assert "ASAP" not in result
+    assert "Deadline" not in result
+
+def test_mailman_alert_empty_title_raises():
+    with pytest.raises(ValueError):
+        mailman_alert("", 3)
+
+def test_mailman_alert_invalid_title_type_raises():
+    with pytest.raises(TypeError):
+        mailman_alert(123, 3)
+
+def test_mailman_alert_invalid_annoyance_type_raises():
+    with pytest.raises(TypeError):
+        mailman_alert("Critical Bug", "5")
+
+def test_mailman_alert_out_of_range_raises():
+    with pytest.raises(ValueError):
+        mailman_alert("Critical Bug", 0)
         
