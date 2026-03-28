@@ -1,1 +1,1 @@
-from .core import puppy_eyes_translator
+from .core import puppy_eyes_translator, good_boy_generator
