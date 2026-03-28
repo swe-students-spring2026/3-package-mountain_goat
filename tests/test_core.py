@@ -1,5 +1,5 @@
 import pytest
-from barkpy import puppy_eyes_translator, good_boy_generator,mailman_alert
+from barkpy import puppy_eyes_translator, good_boy_generator, mailman_alert, zoomie_timer
 
 class Tests:
     def test_puppy_eyes_translator_returns_string(self):
@@ -86,6 +86,88 @@ class Tests:
         with pytest.raises(ValueError, match="sadness_multiplier must be between 1 and 10"):
             puppy_eyes_translator("Can you help?", 15)
 
+class TestZoomieTimer:
+    def test_zoomie_timer_returns_string(self):
+        '''
+        Verify zoomie_timer() returns a string for valid input.
+        '''
+        actual = zoomie_timer(3.5, False)
+        assert isinstance(actual, str), (
+            f"Expected zoomie_timer() to return a string. "
+            f"Instead, it returned {actual}"
+        )
+        assert len(actual) > 0, (
+            f"Expected zoomie_timer() not to return an empty string. "
+            f"Instead, it returned a string with {len(actual)} characters"
+        )
+
+    def test_zoomie_timer_no_backyard(self):
+        '''
+        Verify zoomie_timer() suggests kitchen spins when has_backyard is False.
+        '''
+        actual = zoomie_timer(3.5, False)
+        assert "spins in the kitchen" in actual, (
+            f"Expected output to include 'spins in the kitchen'. Instead, it returned {actual}"
+        )
+        assert "zooms down the hallway" in actual, (
+            f"Expected output to include 'zooms down the hallway'. Instead, it returned {actual}"
+        )
+        assert "3.5" in actual, (
+            f"Expected output to include the sitting hours '3.5'. Instead, it returned {actual}"
+        )
+
+    def test_zoomie_timer_has_backyard(self):
+        '''
+        Verify zoomie_timer() suggests backyard sprints when has_backyard is True.
+        '''
+        actual = zoomie_timer(2.0, True)
+        assert "wind sprints around the backyard" in actual, (
+            f"Expected output to include 'wind sprints around the backyard'. Instead, it returned {actual}"
+        )
+        assert "zooms at full speed" in actual, (
+            f"Expected output to include 'zooms at full speed'. Instead, it returned {actual}"
+        )
+        assert "2.0" in actual, (
+            f"Expected output to include the sitting hours '2.0'. Instead, it returned {actual}"
+        )
+
+    def test_zoomie_timer_sprint_count_increases_with_hours(self):
+        '''
+        Verify zoomie_timer() increases sprint/spin count with more sitting hours.
+        '''
+        short = zoomie_timer(1.0, True)
+        long = zoomie_timer(4.0, True)
+        short_num = int(short.split("Time for ")[1].split(" wind")[0])
+        long_num = int(long.split("Time for ")[1].split(" wind")[0])
+        assert long_num > short_num, (
+            f"Expected more sprints for longer sitting time. "
+            f"Got {short_num} for 1.0 hours and {long_num} for 4.0 hours"
+        )
+
+    def test_zoomie_timer_raises_error_for_invalid_hours_type(self):
+        '''
+        Verify zoomie_timer() raises ValueError when sitting_hours is not a number.
+        '''
+        with pytest.raises(ValueError, match="sitting_hours must be a number"):
+            zoomie_timer("three", False)
+
+    def test_zoomie_timer_raises_error_for_negative_hours(self):
+        '''
+        Verify zoomie_timer() raises ValueError when sitting_hours is 0 or negative.
+        '''
+        with pytest.raises(ValueError, match="sitting_hours must be greater than 0"):
+            zoomie_timer(-1, True)
+        with pytest.raises(ValueError, match="sitting_hours must be greater than 0"):
+            zoomie_timer(0, True)
+
+    def test_zoomie_timer_raises_error_for_invalid_backyard_type(self):
+        '''
+        Verify zoomie_timer() raises ValueError when has_backyard is not a boolean.
+        '''
+        with pytest.raises(ValueError, match="has_backyard must be a boolean"):
+            zoomie_timer(2.0, "yes")
+        with pytest.raises(ValueError, match="has_backyard must be a boolean"):
+            zoomie_timer(2.0, 1)
     def test_good_boy_generator_returns_string(self):
         actual = good_boy_generator("TestName", 5)
         assert isinstance(actual, str), ("Expected good_boy_generator() to return a string."
