@@ -111,3 +111,24 @@ def mailman_alert(ticket_title, annoyance_level):
         suffix = " *protective growl*"
 
     return prefix + " ".join(translated_words) + suffix
+
+
+def good_boy_generator(name: str, roughness: int):
+    if not isinstance(name, str):
+        raise ValueError("name must be a string")
+    
+    if not isinstance(roughness, int):
+        raise ValueError("roughness must be an integer")
+    
+    if roughness < 1 or roughness > 10:
+        raise ValueError("roughness must be an integer between 1 and 10 inclusive")
+    
+    repeats = "Who's a good developer?! " * roughness
+    belly_rubs = "*scritch*" * roughness
+
+    return (f"{repeats}\n" +
+            f"You are, {name}, you are!\n" +
+            f"*wag wag* {belly_rubs}\n" +
+            "Have a treat! 🦴"
+    )
+
