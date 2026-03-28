@@ -1,3 +1,4 @@
+from .core import puppy_eyes_translator, zoomie_timer
 from .core import (
     good_boy_generator,
     zoomie_timer,
