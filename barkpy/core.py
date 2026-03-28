@@ -19,7 +19,7 @@ def puppy_eyes_translator(request_text: str, sadness_multiplier: int) -> str:
         result = "*whimper* " + words[0] + " *big round eyes*"
 
     if sadness_multiplier >= 7:
-        result += " *sad tail thump*"
+        result += " *sad tail thump* *tiny puppy sigh*"
 
     return result
 
