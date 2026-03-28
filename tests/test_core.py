@@ -1,6 +1,5 @@
 import pytest
-from barkpy import puppy_eyes_translator, zoomie_timer
-from barkpy import puppy_eyes_translator, good_boy_generator,mailman_alert
+from barkpy import puppy_eyes_translator, good_boy_generator, mailman_alert, zoomie_timer
 
 class Tests:
     def test_puppy_eyes_translator_returns_string(self):
