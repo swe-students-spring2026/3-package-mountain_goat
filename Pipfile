@@ -7,9 +7,9 @@ name = "pypi"
 barkpy = {file = ".", editable = true}
 
 [dev-packages]
-build = "*"
 twine = "*"
 pytest = "*"
+build = "*"
 
 [requires]
 python_version = "3.13"
