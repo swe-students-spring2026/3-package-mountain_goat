@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.11", "3.12"]
+        python-version: ["3.12", "3.13"]
 
     steps:
       - name: Check out repository
@@ -25,6 +25,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          pipenv --python $(which python)
           pipenv install --dev
           pipenv install -e .
 

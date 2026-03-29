@@ -172,19 +172,6 @@ def good_boy_generator(name: str, roughness: int):
 
 #Helps you make a difficult technical decision by "sniffing out" the best option.
 def paw_selector(options: list, favorite_toy: str) -> str:
-    """
-    Helps you make a difficult technical decision by "sniffing out" the best option.
-    Args:
-        options (list): A list of option strings to choose from.
-        favorite_toy (str): The developer's favorite toy used in the justification.
-
-    Returns:
-        str: A dog-themed decision with a scent-based reason.
-
-    Raises:
-        ValueError: If options is empty.
-        TypeError: If options is not a list or favorite_toy is not a string.
-    """
     if not isinstance(options, list):
         raise TypeError("options must be a list.")
     if not isinstance(favorite_toy, str):

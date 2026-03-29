@@ -1,5 +1,5 @@
 import pytest
-from barkpy import puppy_eyes_translator, good_boy_generator, mailman_alert, zoomie_timer
+from barkpy import puppy_eyes_translator, good_boy_generator, mailman_alert, zoomie_timer, paw_selector
 
 class Tests:
     def test_puppy_eyes_translator_returns_string(self):
@@ -203,9 +203,10 @@ class TestZoomieTimer:
     def test_good_boy_generator_roughness_effect(self):
         roughness = 7
         actual = good_boy_generator("TestName", roughness)
-        assert actual.count("Who\'s a good developer?!") == roughness, (
-            f'Expected good_boy_generator() to return {roughness} "Who\'s a good developer?!" repetitions. '
-            f'Instead, it returned {actual.count("Who\'s a good developer?!")}'
+        phrase = "Who's a good developer?!"
+        assert actual.count(phrase) == roughness, (
+            f'Expected good_boy_generator() to return {roughness} "{phrase}" repetitions. '
+            f'Instead, it returned {actual.count(phrase)}'
         )
 
         assert actual.count("*scritch*") == roughness, (
@@ -241,3 +242,97 @@ def test_mailman_alert_out_of_range_raises():
     with pytest.raises(ValueError):
         mailman_alert("Critical Bug", 0)
         
+class TestPawSelector:
+    def test_paw_selector_returns_string(self):
+        '''
+        Verify paw_selector() returns a string for valid input.
+        '''
+        actual = paw_selector(["React", "Vue", "Svelte"], "Squeaky Ball")
+        assert isinstance(actual, str), (
+            f"Expected paw_selector() to return a string. "
+            f"Instead, it returned {actual}"
+        )
+        assert len(actual) > 0, (
+            f"Expected paw_selector() not to return an empty string. "
+            f"Instead, it returned a string with {len(actual)} characters"
+        )
+
+    def test_paw_selector_chosen_option_in_output(self):
+        '''
+        Verify paw_selector() includes the chosen option in its output.
+        '''
+        options = ["React", "Vue", "Svelte"]
+        actual = paw_selector(options, "Squeaky Ball")
+        assert any(option in actual for option in options), (
+            f"Expected output to contain one of {options}. "
+            f"Instead, it returned {actual}"
+        )
+
+    def test_paw_selector_favorite_toy_in_output(self):
+        '''
+        Verify paw_selector() includes the favorite_toy in its output.
+        '''
+        actual = paw_selector(["React", "Vue", "Svelte"], "Squeaky Ball")
+        assert "Squeaky Ball" in actual, (
+            f"Expected output to include 'Squeaky Ball'. "
+            f"Instead, it returned {actual}"
+        )
+
+    def test_paw_selector_output_contains_tail_wag(self):
+        '''
+        Verify paw_selector() always ends with the tail wag signature.
+        '''
+        actual = paw_selector(["Python", "Java"], "Rope Toy")
+        assert "*tail wag*" in actual, (
+            f"Expected output to include '*tail wag*'. "
+            f"Instead, it returned {actual}"
+        )
+
+    def test_paw_selector_single_option(self):
+        '''
+        Verify paw_selector() works correctly when only one option is given.
+        '''
+        actual = paw_selector(["Svelte"], "Frisbee")
+        assert "Svelte" in actual, (
+            f"Expected output to contain 'Svelte'. "
+            f"Instead, it returned {actual}"
+        )
+        assert "Frisbee" in actual, (
+            f"Expected output to contain 'Frisbee'. "
+            f"Instead, it returned {actual}"
+        )
+
+    def test_paw_selector_raises_error_for_empty_list(self):
+        '''
+        Verify paw_selector() raises ValueError when options list is empty.
+        '''
+        with pytest.raises(ValueError, match="options list cannot be empty"):
+            paw_selector([], "Squeaky Ball")
+
+    def test_paw_selector_raises_error_for_invalid_options_type(self):
+        '''
+        Verify paw_selector() raises TypeError when options is not a list.
+        '''
+        with pytest.raises(TypeError, match="options must be a list"):
+            paw_selector("React", "Squeaky Ball")
+
+    def test_paw_selector_raises_error_for_invalid_toy_type(self):
+        '''
+        Verify paw_selector() raises TypeError when favorite_toy is not a string.
+        '''
+        with pytest.raises(TypeError, match="favorite_toy must be a string"):
+            paw_selector(["React", "Vue"], 42)
+
+    def test_paw_selector_deterministic_with_seed(self):
+        '''
+        Verify paw_selector() picks consistently when random seed is fixed.
+        '''
+        import random
+        random.seed(42)
+        first = paw_selector(["React", "Vue", "Svelte"], "Bone")
+        random.seed(42)
+        second = paw_selector(["React", "Vue", "Svelte"], "Bone")
+        assert first == second, (
+            f"Expected same result with same random seed. "
+            f"Got '{first}' and '{second}'"
+        )
