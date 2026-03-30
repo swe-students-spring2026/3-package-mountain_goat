@@ -31,3 +31,6 @@ jobs:
 
       - name: Run tests
         run: pipenv run pytest
+
+      - name: Build package
+        run: pipenv run python -m build
