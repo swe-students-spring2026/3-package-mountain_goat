@@ -1,7 +1,7 @@
 import pytest
 from barkpy import puppy_eyes_translator, good_boy_generator, mailman_alert, zoomie_timer, paw_selector
 
-class Tests:
+class TestPuppyEyesTranslator:
     def test_puppy_eyes_translator_returns_string(self):
         '''
         Verify puppy_eyes_translator() returns a string for valid input.
@@ -86,6 +86,7 @@ class Tests:
         with pytest.raises(ValueError, match="sadness_multiplier must be between 1 and 10"):
             puppy_eyes_translator("Can you help?", 15)
 
+
 class TestZoomieTimer:
     def test_zoomie_timer_returns_string(self):
         '''
@@ -168,6 +169,9 @@ class TestZoomieTimer:
             zoomie_timer(2.0, "yes")
         with pytest.raises(ValueError, match="has_backyard must be a boolean"):
             zoomie_timer(2.0, 1)
+
+
+class TestGoodBoyGenerator:
     def test_good_boy_generator_returns_string(self):
         actual = good_boy_generator("TestName", 5)
         assert isinstance(actual, str), ("Expected good_boy_generator() to return a string."
@@ -175,7 +179,7 @@ class TestZoomieTimer:
         assert len(actual) > 0, (
             "Expected good_boy_generator() not to be empty. "
         )
-    
+
     def test_good_boy_generator_returns_expected_text(self):
         actual = good_boy_generator("TestName", 5)
         assert "Who's a good developer?!" in actual, (
@@ -187,19 +191,19 @@ class TestZoomieTimer:
         assert "*scritch*" in actual, (
             f"Expected output to include '*scritch*'. Instead, it returned {actual}"
         )
-    
+
     def test_good_boy_generator_raises_value_error_out_of_range(self):
-         with pytest.raises(ValueError, match="roughness must be an integer between 1 and 10 inclusive"):
-            good_boy_generator("TestName" , 11)
-        
+        with pytest.raises(ValueError, match="roughness must be an integer between 1 and 10 inclusive"):
+            good_boy_generator("TestName", 11)
+
     def test_good_boy_generator_raises_value_error_name_not_string(self):
         with pytest.raises(ValueError, match="name must be a string"):
             good_boy_generator(20, 5)
-    
+
     def test_good_boy_generator_raises_value_roughness_not_int(self):
         with pytest.raises(ValueError, match="roughness must be an integer"):
-            good_boy_generator("TestName", "one")    
-    
+            good_boy_generator("TestName", "one")
+
     def test_good_boy_generator_roughness_effect(self):
         roughness = 7
         actual = good_boy_generator("TestName", roughness)
@@ -208,40 +212,42 @@ class TestZoomieTimer:
             f'Expected good_boy_generator() to return {roughness} "{phrase}" repetitions. '
             f'Instead, it returned {actual.count(phrase)}'
         )
-
         assert actual.count("*scritch*") == roughness, (
             f"Expected good_boy_generator() to return {roughness} belly rubs."
             f"Instead, it returned {actual.count('*scritch*')}"
         )
 
-def test_mailman_alert_returns_string():
-    result = mailman_alert("Critical Bug in Production", 5)
-    assert isinstance(result, str)
-    assert "Bug" in result
-    assert "BARK" in result or "WOOF" in result
 
-def test_mailman_alert_replaces_stress_words():
-    result = mailman_alert("Critical ASAP Deadline", 4)
-    assert "Critical" not in result
-    assert "ASAP" not in result
-    assert "Deadline" not in result
+class TestMailmanAlert:
+    def test_mailman_alert_returns_string(self):
+        result = mailman_alert("Critical Bug in Production", 5)
+        assert isinstance(result, str)
+        assert "Bug" in result
+        assert "BARK" in result or "WOOF" in result
 
-def test_mailman_alert_empty_title_raises():
-    with pytest.raises(ValueError):
-        mailman_alert("", 3)
+    def test_mailman_alert_replaces_stress_words(self):
+        result = mailman_alert("Critical ASAP Deadline", 4)
+        assert "Critical" not in result
+        assert "ASAP" not in result
+        assert "Deadline" not in result
 
-def test_mailman_alert_invalid_title_type_raises():
-    with pytest.raises(TypeError):
-        mailman_alert(123, 3)
+    def test_mailman_alert_empty_title_raises(self):
+        with pytest.raises(ValueError):
+            mailman_alert("", 3)
 
-def test_mailman_alert_invalid_annoyance_type_raises():
-    with pytest.raises(TypeError):
-        mailman_alert("Critical Bug", "5")
+    def test_mailman_alert_invalid_title_type_raises(self):
+        with pytest.raises(TypeError):
+            mailman_alert(123, 3)
 
-def test_mailman_alert_out_of_range_raises():
-    with pytest.raises(ValueError):
-        mailman_alert("Critical Bug", 0)
-        
+    def test_mailman_alert_invalid_annoyance_type_raises(self):
+        with pytest.raises(TypeError):
+            mailman_alert("Critical Bug", "5")
+
+    def test_mailman_alert_out_of_range_raises(self):
+        with pytest.raises(ValueError):
+            mailman_alert("Critical Bug", 0)
+
+
 class TestPawSelector:
     def test_paw_selector_returns_string(self):
         '''
