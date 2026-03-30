@@ -39,11 +39,26 @@ def demo_paw_selector():
     print("Input: paw_selector(['merge', 'rebase'], 'frisbee')")
     print("Output:", paw_selector(['merge', 'rebase'], 'frisbee'))
 
+def demo_good_boy_generator():
+    print("=== good_boy_generator ===")
+    print("Input: good_boy_generator('Alice', 1)")
+    print("Output:", good_boy_generator('Alice', 1))
+
+    print("Input: good_boy_generator('Bob', 3)")
+    print("Output:", good_boy_generator('Bob', 3))
+
+    print("Input: good_boy_generator('Joe', 5)")
+    print("Output:", good_boy_generator('Joe', 5))
+
+    print("Input: good_boy_generator('Rebecca', 10)")
+    print("Output:", good_boy_generator('Rebecca',10))
 
 def main():
     demo_puppy_eyes_translator()
     print()
     demo_paw_selector()
+    print()
+    demo_good_boy_generator()
 
 
 if __name__ == "__main__":

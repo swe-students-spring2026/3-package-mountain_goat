@@ -162,7 +162,7 @@ def good_boy_generator(name: str, roughness: int):
         raise ValueError("roughness must be an integer between 1 and 10 inclusive")
     
     repeats = "Who's a good developer?! " * roughness
-    belly_rubs = "*scritch*" * roughness
+    belly_rubs = "*scritch* " * roughness
 
     return (f"{repeats}\n" +
             f"You are, {name}, you are!\n" +
