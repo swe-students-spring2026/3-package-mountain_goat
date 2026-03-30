@@ -6,9 +6,8 @@ from barkpy import (
     paw_selector
 )
 
-def main():
-
-    print("Testing puppy_eyes_translator")
+def demo_puppy_eyes_translator():
+    print("=== puppy_eyes_translator ===")
     print()
 
     print("Input: puppy_eyes_translator('Can you review my PR?', 7)")
@@ -16,12 +15,36 @@ def main():
 
     print("Input: puppy_eyes_translator('Please check my code', 3)")
     print("Output:", puppy_eyes_translator("Please check my code", 3))
-    
+
     print("Input: puppy_eyes_translator('Help me', 5)")
     print("Output:", puppy_eyes_translator("Help me", 5))
 
     print("Input: puppy_eyes_translator('Help', 10)")
     print("Output:", puppy_eyes_translator("Help", 10))
+
+
+def demo_paw_selector():
+    print("=== paw_selector ===")
+    print()
+
+    print("Input: paw_selector(['React', 'Vue', 'Angular'], 'tennis ball')")
+    print("Output:", paw_selector(['React', 'Vue', 'Angular'], 'tennis ball'))
+
+    print("Input: paw_selector(['Python', 'JavaScript', 'Go', 'Rust'], 'squeaky toy')")
+    print("Output:", paw_selector(['Python', 'JavaScript', 'Go', 'Rust'], 'squeaky toy'))
+
+    print("Input: paw_selector(['AWS', 'GCP'], 'chew bone')")
+    print("Output:", paw_selector(['AWS', 'GCP'], 'chew bone'))
+
+    print("Input: paw_selector(['merge', 'rebase'], 'frisbee')")
+    print("Output:", paw_selector(['merge', 'rebase'], 'frisbee'))
+
+
+def main():
+    demo_puppy_eyes_translator()
+    print()
+    demo_paw_selector()
+
 
 if __name__ == "__main__":
     main()
