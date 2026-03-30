@@ -5,3 +5,17 @@ from barkpy import (
     zoomie_timer,
     paw_selector
 )
+
+def main():
+
+    print("Input: puppy_eyes_translator('Can you review my PR?', 7)")
+    print("Output:", puppy_eyes_translator("Can you review my PR?", 7))
+
+    print("Input: puppy_eyes_translator('Please check my code', 3)")
+    print("Output:", puppy_eyes_translator("Please check my code", 3))
+
+    print("Input: puppy_eyes_translator('Help', 10)")
+    print("Output:", puppy_eyes_translator("Help", 10))
+
+if __name__ == "__main__":
+    main()
