@@ -144,11 +144,11 @@ from barkpy import puppy_eyes_translator
 
 result = puppy_eyes_translator("Can you review my PR?", 7)
 print(result)
-# *whimper* Can you *tilts head* review my *big round eyes* PR? *sad tail thump* *tiny puppy sigh*
+# *whimper* Can *tilts head* you review my *big round eyes* PR? *sad tail thump* *tiny puppy sigh*
 
 result = puppy_eyes_translator("Can you review my PR?", 4)
 print(result)
-# *whimper* Can you *tilts head* review my *big round eyes* PR?
+# *whimper* Can *tilts head* you review my *big round eyes* PR?
 ```
 
 ---
