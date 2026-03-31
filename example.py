@@ -53,12 +53,31 @@ def demo_good_boy_generator():
     print("Input: good_boy_generator('Rebecca', 10)")
     print("Output:", good_boy_generator('Rebecca',10))
 
+def demo_mailman_alert():
+    print("=== mailman_alert ===")
+    print()
+
+    print("Input: mailman_alert('Critical Bug in Production', 5)")
+    print("Output:", mailman_alert("Critical Bug in Production", 5))
+
+    print("Input: mailman_alert('ASAP Jira Deadline', 3)")
+    print("Output:", mailman_alert("ASAP Jira Deadline", 3))
+
+    print("Input: mailman_alert('Urgent Production Issue', 1)")
+    print("Output:", mailman_alert("Urgent Production Issue", 1))
+
+    print("Input: mailman_alert('Critical ASAP Bug', 4)")
+    print("Output:", mailman_alert("Critical ASAP Bug", 4))
+
 def main():
     demo_puppy_eyes_translator()
     print()
     demo_paw_selector()
     print()
     demo_good_boy_generator()
+    print()
+    demo_mailman_alert()
+
 
 
 if __name__ == "__main__":
