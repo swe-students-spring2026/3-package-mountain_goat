@@ -4,7 +4,7 @@
 
 **barkpy** is a lighthearted Python package that brings dog-themed joy to everyday developer life. Feeling burnt out after a rough debugging session? Let barkpy shower you with encouragement, suggest a zoomie break, and help you make hard technical decisions — the way only a good dog can.
 
-**Available on PyPI:** [barkpy 0.1.0](https://pypi.org/project/barkpy/0.1.0/)
+**Available on PyPI:** [barkpy](https://pypi.org/project/barkpy/0.1.0/)
 
 ---
 
