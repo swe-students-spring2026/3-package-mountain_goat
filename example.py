@@ -69,8 +69,26 @@ def demo_mailman_alert():
     print("Input: mailman_alert('Critical ASAP Bug', 4)")
     print("Output:", mailman_alert("Critical ASAP Bug", 4))
 
+def demo_zoomie_timer():
+    print("=== zoomie_timer ===")
+    print()
+
+    print("Input: zoomie_timer(3.5, False)")
+    print("Output:", zoomie_timer(3.5, False))
+
+    print("Input: zoomie_timer(2.0, True)")
+    print("Output:", zoomie_timer(2.0, True))
+
+    print("Input: zoomie_timer(1.0, False)")
+    print("Output:", zoomie_timer(1.0, False))
+
+    print("Input: zoomie_timer(4.0, True)")
+    print("Output:", zoomie_timer(4.0, True))
+
 def main():
     demo_puppy_eyes_translator()
+    print()
+    demo_zoomie_timer()
     print()
     demo_paw_selector()
     print()
