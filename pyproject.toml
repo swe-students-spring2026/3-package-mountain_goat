@@ -11,7 +11,20 @@ requires-python = ">=3.10"
 authors = [
   { name = "barkpy team" }
 ]
-license = { text = "MIT" }
+keywords = ["python", "package", "dogs", "fun"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: Education",
+    "Operating System :: OS Independent",
+]
 
-[tool.setuptools.packages.find]
-where = ["."]
+[project.optional-dependencies]
+dev = ["pytest", "build", "twine"]
+
+[project.urls]
+"Homepage" = "https://github.com/swe-students-spring2026/3-package-mountain_goat"
+"Repository" = "https://github.com/swe-students-spring2026/3-package-mountain_goat.git"
+"Bug Tracker" = "https://github.com/swe-students-spring2026/3-package-mountain_goat/issues"
+
+[project.scripts]
+barkpy-demo = "example:main"
