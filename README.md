@@ -235,8 +235,8 @@ There are no environment variables or secret configuration files required to run
 
 ## 👥 Team
 
-- [Carolina](https://github.com/CAROLINA_GITHUB_USERNAME) — `good_boy_generator`
+- [Carolina](https://github.com/CarolLee04) — `good_boy_generator`
 - [Sean Kim](https://github.com/seankimh) — `zoomie_timer`
-- [Inoo](https://github.com/INOO_GITHUB_USERNAME) — `mailman_alert`
+- [Inoo Jung](https://github.com/ij2298-oss) — `mailman_alert`
 - [Tae Kim](https://github.com/thk224) — `paw_selector`
-- [Yi Lai](https://github.com/YILAI_GITHUB_USERNAME) — `puppy_eyes_translator`
+- [Yi Lai](https://github.com/laiEEEEEEE) — `puppy_eyes_translator`
