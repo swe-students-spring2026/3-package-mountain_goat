@@ -52,20 +52,23 @@ from barkpy import (
 
 ---
 
-### `good_boy_generator(name, roughness_level)`
+### `good_boy_generator(name, roughness)`
 
 Provides a massive ego boost to a developer based on how rough their day has been. Higher roughness levels increase encouragement repetitions and belly rubs.
 
 **Arguments:**
 - `name` (str) — the developer's name
-- `roughness_level` (int, 1–10) — how rough the day was
+- `roughness` (int, 1–10) — how rough the day was
 
 ```python
 from barkpy import good_boy_generator
 
-result = good_boy_generator("Riley", 8)
+result = good_boy_generator("Riley", 3)
 print(result)
-# Who's a good developer?! Who's a good developer?! ... YOU ARE, Riley! *scritch* *scritch* 🦴
+# Who's a good developer?! Who's a good developer?! Who's a good developer?!
+# You are, Riley, you are!
+# *wag wag* *scritch* *scritch* *scritch*
+# Have a treat! 🦴
 ```
 
 ---
@@ -83,11 +86,11 @@ from barkpy import zoomie_timer
 
 result = zoomie_timer(3.5, False)
 print(result)
-# You've been sitting for 3.5 hours! Time for 3 spins in the kitchen and a quick bark at the mailman.
+# You've been sitting for 3.5 hours! Time for 3 spins in the kitchen and a quick bark at the mailman. *zooms down the hallway* 🐾
 
 result = zoomie_timer(2.0, True)
 print(result)
-# You've been sitting for 2.0 hours! Time for 2 wind sprints around the backyard — zooms at full speed!
+# You've been sitting for 2.0 hours! Time for 4 wind sprints around the backyard! *zooms at full speed* 🐾
 ```
 
 ---
@@ -103,9 +106,9 @@ Translates scary Jira tickets or deadline emails into dog barks to make them les
 ```python
 from barkpy import mailman_alert
 
-result = mailman_alert("Critical Bug in Production", 5)
+result = mailman_alert("Server is down", 5)
 print(result)
-# BARK BARK! *snarl* Bug in Production! *protective growl*
+# BARK BARK! *snarl* Server is down *protective growl*
 ```
 
 ---
@@ -141,11 +144,11 @@ from barkpy import puppy_eyes_translator
 
 result = puppy_eyes_translator("Can you review my PR?", 7)
 print(result)
-# *whimper* Can you *tilts head* review my *big round eyes* PR? *sad tail thump*
-
-result = puppy_eyes_translator("Can you review my PR?", 9)
-print(result)
 # *whimper* Can you *tilts head* review my *big round eyes* PR? *sad tail thump* *tiny puppy sigh*
+
+result = puppy_eyes_translator("Can you review my PR?", 4)
+print(result)
+# *whimper* Can you *tilts head* review my *big round eyes* PR?
 ```
 
 ---
