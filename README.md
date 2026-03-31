@@ -1,14 +1,14 @@
-# 🐶 barkpy — The Developer's Best Friend
+# barkpy — The Developer's Best Friend
 
 [![Python package tests](https://github.com/swe-students-spring2026/3-package-mountain_goat/actions/workflows/ci.yml/badge.svg)](https://github.com/swe-students-spring2026/3-package-mountain_goat/actions/workflows/ci.yml)
 
 **barkpy** is a lighthearted Python package that brings dog-themed joy to everyday developer life. Feeling burnt out after a rough debugging session? Let barkpy shower you with encouragement, suggest a zoomie break, and help you make hard technical decisions — the way only a good dog can.
 
-📦 **Available on PyPI:** [https://pypi.org/project/barkpy/0.1.0/](https://pypi.org/project/barkpy/0.1.0/)
+**Available on PyPI:** [barkpy 0.1.0](https://pypi.org/project/barkpy/0.1.0/)
 
 ---
 
-## 🦴 Features
+## Features
 
 | Function | What it does |
 |---|---|
@@ -20,7 +20,7 @@
 
 ---
 
-## 🚀 Installation
+## Installation
 
 Install barkpy via pip:
 
@@ -36,7 +36,7 @@ pipenv install barkpy
 
 ---
 
-## 📖 Usage
+## Usage
 
 ### Import the package
 
@@ -68,7 +68,7 @@ print(result)
 # Who's a good developer?! Who's a good developer?! Who's a good developer?!
 # You are, Riley, you are!
 # *wag wag* *scritch* *scritch* *scritch*
-# Have a treat! 🦴
+# Have a treat! 
 ```
 
 ---
@@ -86,11 +86,11 @@ from barkpy import zoomie_timer
 
 result = zoomie_timer(3.5, False)
 print(result)
-# You've been sitting for 3.5 hours! Time for 3 spins in the kitchen and a quick bark at the mailman. *zooms down the hallway* 🐾
+# You've been sitting for 3.5 hours! Time for 3 spins in the kitchen and a quick bark at the mailman. *zooms down the hallway* 
 
 result = zoomie_timer(2.0, True)
 print(result)
-# You've been sitting for 2.0 hours! Time for 4 wind sprints around the backyard! *zooms at full speed* 🐾
+# You've been sitting for 2.0 hours! Time for 4 wind sprints around the backyard! *zooms at full speed* 
 ```
 
 ---
@@ -126,7 +126,7 @@ from barkpy import paw_selector
 
 result = paw_selector(["React", "Vue", "Svelte"], "Squeaky Ball")
 print(result)
-# The paws have spoken! We pick 'Svelte' because it smells like your Squeaky Ball! *tail wag* 🐾
+# The paws have spoken! We pick 'Svelte' because it smells like your Squeaky Ball! *tail wag* 
 ```
 
 ---
@@ -153,13 +153,13 @@ print(result)
 
 ---
 
-## 🐾 Example Program
+## Example Program
 
 See [`example.py`](./example.py) for a complete program that demonstrates all five functions.
 
 ---
 
-## 🛠️ Contributing
+## Contributing
 
 Follow these steps to set up the project locally and contribute.
 
@@ -210,7 +210,7 @@ pipenv run twine upload dist/*
 
 ---
 
-## 🔄 Developer Workflow
+## Developer Workflow
 
 All code changes must be made in a feature branch — never directly on `main`.
 
@@ -228,7 +228,7 @@ Then open a pull request on GitHub. A teammate must review and approve before me
 
 ---
 
-## ⚙️ CI/CD
+## CI/CD
 
 This project uses GitHub Actions to run tests on every pull request to `main` across two Python versions (3.12 and 3.13). See [`.github/workflows/ci.yml`](./.github/workflows/ci.yml).
 
@@ -236,7 +236,7 @@ There are no environment variables or secret configuration files required to run
 
 ---
 
-## 👥 Team
+## Team
 
 - [Carolina](https://github.com/CarolLee04) — `good_boy_generator`
 - [Sean Kim](https://github.com/seankimh) — `zoomie_timer`
