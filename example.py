@@ -22,7 +22,6 @@ def demo_puppy_eyes_translator():
     print("Input: puppy_eyes_translator('Help', 10)")
     print("Output:", puppy_eyes_translator("Help", 10))
 
-
 def demo_paw_selector():
     print("=== paw_selector ===")
     print()
@@ -95,8 +94,6 @@ def main():
     demo_good_boy_generator()
     print()
     demo_mailman_alert()
-
-
 
 if __name__ == "__main__":
     main()
