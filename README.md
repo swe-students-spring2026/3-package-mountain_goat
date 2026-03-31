@@ -4,7 +4,7 @@
 
 **barkpy** is a lighthearted Python package that brings dog-themed joy to everyday developer life. Feeling burnt out after a rough debugging session? Let barkpy shower you with encouragement, suggest a zoomie break, and help you make hard technical decisions — the way only a good dog can.
 
-📦 **Available on PyPI:** [https://pypi.org/project/barkpy/0.1.0/](https://pypi.org/project/barkpy/0.1.0/)
+📦 **Available on PyPI:** [https://pypi.org/project/barkpy/0.1.1/](https://pypi.org/project/barkpy/0.1.1/)
 
 ---
 
@@ -144,11 +144,11 @@ from barkpy import puppy_eyes_translator
 
 result = puppy_eyes_translator("Can you review my PR?", 7)
 print(result)
-# *whimper* Can *tilts head* you review my *big round eyes* PR? *sad tail thump* *tiny puppy sigh*
+# *whimper* Can you *tilts head* review my *big round eyes* PR? *sad tail thump* *tiny puppy sigh*
 
 result = puppy_eyes_translator("Can you review my PR?", 4)
 print(result)
-# *whimper* Can *tilts head* you review my *big round eyes* PR?
+# *whimper* Can you *tilts head* review my *big round eyes* PR?
 ```
 
 ---
