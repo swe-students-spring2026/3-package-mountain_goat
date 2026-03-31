@@ -150,7 +150,6 @@ def mailman_alert(ticket_title, annoyance_level):
 
     return prefix + " ".join(translated_words) + suffix
 
-
 def good_boy_generator(name: str, roughness: int):
     if not isinstance(name, str):
         raise ValueError("name must be a string")
